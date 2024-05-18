@@ -1,13 +1,43 @@
-import "./App.css";
-import conf from "./conf/conf";
+import authService from "./auth/auth";
+import { Footer, Header } from "../src/components/index";
+import { login, logout } from "./store/authSlice";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  console.log(import.meta.env.VITE_APPWRITE_URL);
-  return (
-    <>
-      <h1>A Blog App with Appwrite</h1>
-    </>
-  );
+  const [loading, setloading] = useState(true);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    authService
+      .getUser()
+      .then((userdata) => {
+        if (userdata) {
+          dispatch(login({ userdata }));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .finally(() => setloading(false));
+  }, []);
+
+  if (!loading) {
+    return (
+      <div>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1> Loading..................</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
