@@ -21,7 +21,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="text-white flex gap-5 justify-between px-10 py-5 relative -bottom-2 rounded-xl bg-gray-900 max-lg:flex-col ">
+    <footer className="text-white flex gap-5 justify-between px-10 py-5 relative -bottom-28 rounded-xl bg-gray-900 max-lg:flex-col ">
       <div className=" w-[450px] max-md:w-fit">
         <h1 className="mb-3 text-3xl font-extrabold">Shivam Abraham</h1>
         <p className="text-gray-300">

@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     authService
-      .getUser()
+      .getCurrentUser()
       .then((userdata) => {
         if (userdata) {
           dispatch(login({ userdata }));
@@ -23,7 +23,7 @@ function App() {
 
   if (!loading) {
     return (
-      <div>
+      <div className="bg-green-200">
         <Header />
         <main>
           <Outlet />

@@ -46,11 +46,11 @@ function Header() {
     <div>
       <header className="flex justify-between p-4 my-1">
         <Container>
-          <nav>
+          <nav className="flex justify-between items-center">
             <div>
               <h1>Logo</h1>
             </div>
-            <ul>
+            <ul className="flex justify-between items-center gap-5">
               {navItems.map((item) =>
                 item.active ? (
                   <li key={item.name}>
