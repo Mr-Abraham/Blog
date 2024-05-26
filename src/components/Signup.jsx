@@ -34,7 +34,7 @@ function Signup() {
         <h2>Sign Up</h2>
         {error && <p>{error}</p>}
       </div>
-      <form action="" onSubmit={handleSubmit(create)}>
+      <form action="" onSubmit={handleSubmit(signup)}>
         <Input
           label="Name"
           type="text"

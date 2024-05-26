@@ -35,7 +35,7 @@ function Login() {
           Dont't have An Account !! <Link to={"/signup"}>Sign UP</Link>
         </p>
         <div>{error && <p className="text-red-600">{error}</p>}</div>
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={handleSubmit(login)}>
           <Input
             type="email"
             label="Email :"

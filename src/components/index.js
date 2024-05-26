@@ -6,6 +6,9 @@ import Button from "./Button";
 import Input from "./Input";
 import Select from "./Select";
 import PostCard from "./PostCard";
+import RTE from "./RTE";
+import PostCard from "./PostCard";
+import Protected from "./Protected";
 export {
   Header,
   Footer,
@@ -15,4 +18,6 @@ export {
   Button,
   Select,
   PostCard,
+  Protected,
+  RTE,
 };
