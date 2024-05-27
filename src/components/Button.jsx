@@ -2,10 +2,10 @@ import React from "react";
 
 function Button({
   children,
-  type = "button",
+  type,
   bgColor = "bg-blue-600",
   textColor = "text-white",
-  className = "",
+  className,
   ...props
 }) {
   return (

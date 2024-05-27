@@ -17,8 +17,9 @@ function Login() {
       const session = await authService.login(data);
       if (session) {
         const userData = await authService.getCurrentUser();
-        if (userData) dispatch(authLogin(userData));
+        if (userData) dispatch(storeLogin(userData));
         navigate("/");
+        console.log(`SuccessFully Loged In :: ${userData} `);
       }
     } catch (error) {
       setError(error.message);
@@ -42,7 +43,9 @@ function Login() {
             Sign Up
           </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        {error && (
+          <p className="text-red-600 mt-8 text-center mb-3 border">{error}</p>
+        )}
         <form onSubmit={handleSubmit(login)} className="mt-8">
           <div className="space-y-5">
             <Input
@@ -66,9 +69,15 @@ function Login() {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full">
+            {/* <Button  type="submit" className="w-full">
               Sign in
-            </Button>
+            </Button> */}
+            <button
+              onClick={handleSubmit(login)}
+              className="bg-blue-500 w-full rounded-lg p-2 text-white"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
